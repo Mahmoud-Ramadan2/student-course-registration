@@ -1,0 +1,35 @@
+
+# Spring Boot Development Configuration
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/course_registration}  # for local dev
+#    url: ${DB_URL:jdbc:postgresql://postgres:5432/course_registration} #  for docker
+    username: ${DB_USER:admin}
+    password: ${DB_PASSWORD:admin_pw}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+    properties:
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+        jdbc:
+          time_zone: UTC
+    show-sql: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: false
+    locations: classpath:db/migration,classpath:db/testdata
+
+
+logging:
+  level:
+    root: INFO
+    org.springframework: WARN
+    org.hibernate.SQL: OFF

@@ -4,6 +4,7 @@ import com.mahmoudramadan.studentregistration.user.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.net.InetAddress;
 import java.time.Instant;
 
 @Entity
@@ -39,7 +40,7 @@ public class RefreshToken {
     private String deviceId;
 
     @Column(name = "ip_address", columnDefinition = "INET")
-    private String ipAddress;
+    private InetAddress ipAddress;
 
     @Column(name = "user_agent")
     private String userAgent;

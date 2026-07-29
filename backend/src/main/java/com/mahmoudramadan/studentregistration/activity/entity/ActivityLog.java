@@ -8,6 +8,7 @@ import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 
+import java.net.InetAddress;
 import java.time.Instant;
 import java.util.Map;
 
@@ -40,7 +41,7 @@ public class ActivityLog {
     private Map<String, Object> details;
 
     @Column(name = "ip_address", columnDefinition = "INET")
-    private String ipAddress;
+    private InetAddress ipAddress;
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)

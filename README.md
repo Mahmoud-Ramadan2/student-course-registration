@@ -1,15 +1,6 @@
 # Student Course Registration API
 
-<p align="center">
-  <img alt="Java" src="https://img.shields.io/badge/Java-21-007396?logo=openjdk&logoColor=white">
-  <img alt="Spring Boot" src="https://img.shields.io/badge/Spring_Boot-4.1.0-6DB33F?logo=springboot&logoColor=white">
-  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-17-336791?logo=postgresql&logoColor=white">
-  <img alt="Flyway" src="https://img.shields.io/badge/Flyway-10-cc0200?logo=flyway&logoColor=white">
-  <img alt="JWT" src="https://img.shields.io/badge/JWT-000000?logo=jsonwebtokens&logoColor=white">
-  <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white">
-  <img alt="Swagger" src="https://img.shields.io/badge/Swagger-85EA2D?logo=swagger&logoColor=black">
-  <img alt="Build" src="https://img.shields.io/badge/Build-Maven-C71A36?logo=apachemaven&logoColor=white">
-</p>
+☕ **Java** 21 | 🍃 **Spring Boot** 4.1.0 | 🐘 **PostgreSQL** 17 | 🪰 **Flyway** 10 | 🔐 **JWT** | 🐳 **Docker** | 📄 **Swagger/OpenAPI** | 📦 **Maven**
 
 ---
 

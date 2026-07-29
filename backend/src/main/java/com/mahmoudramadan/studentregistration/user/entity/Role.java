@@ -1,6 +1,7 @@
 package com.mahmoudramadan.studentregistration.user.entity;
 
 import com.mahmoudramadan.studentregistration.shared.entity.BaseAuditableEntity;
+import com.mahmoudramadan.studentregistration.user.enums.RoleName;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,11 +15,11 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 public class Role extends BaseAuditableEntity {
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "role_name", nullable = false, unique = true, length = 30)
-    private String roleName;
+    private RoleName roleName;
 
     @Column(length = 255)
     private String description;

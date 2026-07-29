@@ -6,7 +6,6 @@ spring:
     active: ${SPRING_PROFILES_ACTIVE:dev}
 
 
-
 security:
   jwt:
     secret: ${JWT_SECRET:wCUtLESdQf2IchnZ/rA8J5oDFMza9HPX6vL1Hr9rNhM=}
@@ -27,3 +26,60 @@ springdoc:
     path: /swagger-ui.html
   api-docs:
     path: /v3/api-docs
+
+app:
+  mail:
+    provider: ${MAIL_PROVIDER:smtp}
+    from: ${MAIL_FROM:noreply@university.edu}
+    support-email: ${MAIL_SUPPORT_EMAIL:support@university.edu}
+    frontend-url: ${FRONTEND_URL:http://localhost:3000}
+    application-name: ${APP_NAME:Student Course Registration}
+
+
+
+resilience4j:
+  # ===========================================================================
+  # CIRCUIT BREAKER CONFIGURATION (Cascading Failure Protection)
+  # ===========================================================================
+  circuitbreaker:
+    circuit-breaker-aspect-order: 1     # CircuitBreaker = outer aspect
+    configs:
+      default:
+        slidingWindowType: COUNT_BASED  # Evaluate window by request count, not time
+        sliding-window-size: 10         # Minimum window before circuit can open
+        minimumNumberOfCalls: 5         # Must have at least 5 calls before metrics compute
+        failureRateThreshold: 50        # Open circuit if >= 50% of window calls fail
+        waitDurationInOpenState: 30s    # Stay OPEN for 30s, then test with HALF_OPEN
+        permittedNumberOfCallsInHalfOpenState: 3  # 3 probe calls in HALF_OPEN
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
+
+      email-default:
+        baseConfig: default
+        recordExceptions:
+          - org.springframework.mail.MailSendException
+          - com.mahmoudramadan.studentregistration.notification.exception.MailSendingException
+
+    instances:
+      emailServiceBreaker:
+        baseConfig: email-default
+
+  # ===========================================================================
+  # RETRY CONFIGURATION (Automatic Re-execution)
+  # ===========================================================================
+  retry:
+    retry-aspect-order: 2               # Retry = inner aspect (wrapped by CircuitBreaker)
+    configs:
+      default:
+        maxAttempts: 3                  # 1 initial attempt + 2 retries
+        waitDuration: 2s               # Static backoff between retries
+
+      email-default:
+        baseConfig: default
+        retryExceptions:
+          - org.springframework.mail.MailSendException
+          - com.mahmoudramadan.studentregistration.notification.exception.MailSendingException
+
+    instances:
+      emailRetry:
+        baseConfig: email-default

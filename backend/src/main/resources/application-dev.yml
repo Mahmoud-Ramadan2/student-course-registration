@@ -4,10 +4,11 @@
 spring:
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/course_registration}  # for local dev
-#    url: ${DB_URL:jdbc:postgresql://postgres:5432/course_registration} #  for docker
     username: ${DB_USER:admin}
     password: ${DB_PASSWORD:admin_pw}
     driver-class-name: org.postgresql.Driver
+
+
 
   jpa:
     hibernate:
@@ -27,6 +28,12 @@ spring:
     baseline-on-migrate: false
     locations: classpath:db/migration,classpath:db/testdata
 
+  mail:
+    host: localhost
+    port: 1025
+    properties:
+      mail.smtp.auth: false
+      mail.smtp.starttls.enable: false
 
 logging:
   level:

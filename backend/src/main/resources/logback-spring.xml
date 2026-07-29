@@ -53,6 +53,7 @@
     <appender name="FILE"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
 
+
         <file>${LOG_PATH}/application.log</file>
 
         <append>true</append>

@@ -1,11 +1,24 @@
 package com.mahmoudramadan.studentregistration.student.entity;
 
 import com.mahmoudramadan.studentregistration.student.enums.StudentStatus;
-import com.mahmoudramadan.studentregistration.user.entity.User;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.time.Instant;
 import java.time.LocalDate;
+
+
+import com.mahmoudramadan.studentregistration.user.entity.User;
+import lombok.*;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 
 @Entity
 @Table(name = "students")
@@ -14,6 +27,7 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
 public class Student {
 
     @Id
@@ -42,4 +56,17 @@ public class Student {
 
     @Enumerated(EnumType.STRING)
     private StudentStatus status;
+
+    @CreatedDate
+    @Column(name = "created_at", updatable = false)
+    private Instant createdAt;
+    @LastModifiedDate
+    @Column(name = "updated_at")
+    private Instant updatedAt;
+    @CreatedBy
+    @Column(name = "created_by", updatable = false)
+    private Long createdBy;
+    @LastModifiedBy
+    @Column(name = "updated_by")
+    private Long updatedBy;
 }

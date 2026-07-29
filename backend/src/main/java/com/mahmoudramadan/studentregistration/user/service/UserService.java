@@ -20,6 +20,7 @@ public class UserService {
 
     @Transactional(readOnly = true)
     public UserResponse getCurrentUser(String username) {
+        log.debug("Loading current user username={}", username);
         User user = userRepository.findByUsernameIgnoreCase(username)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 

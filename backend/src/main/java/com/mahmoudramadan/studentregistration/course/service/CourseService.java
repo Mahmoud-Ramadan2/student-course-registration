@@ -6,7 +6,9 @@ import com.mahmoudramadan.studentregistration.course.dto.CourseResponse;
 import com.mahmoudramadan.studentregistration.course.dto.UpdateCourseRequest;
 import com.mahmoudramadan.studentregistration.course.entity.Course;
 import com.mahmoudramadan.studentregistration.course.mapper.CourseMapper;
+import com.mahmoudramadan.studentregistration.course.repo.CourseOfferingRepository;
 import com.mahmoudramadan.studentregistration.course.repo.CourseRepository;
+import com.mahmoudramadan.studentregistration.enrollment.repo.EnrollmentRepository;
 import com.mahmoudramadan.studentregistration.shared.exception.BusinessException;
 import com.mahmoudramadan.studentregistration.shared.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +25,8 @@ public class CourseService {
     private final CourseRepository courseRepository;
     private final CourseMapper courseMapper;
     private final ActivityLogService activityLogService;
+    private final CourseOfferingRepository courseOfferingRepository;
+    private final EnrollmentRepository enrollmentRepository;
 
     @Transactional
     public CourseResponse create(CreateCourseRequest request) {
@@ -93,6 +97,16 @@ public class CourseService {
     public void delete(Long id) {
         Course course = courseRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Course not found"));
+
+        if (courseOfferingRepository.existsByCourseId(id)) {
+            throw new BusinessException(
+                    "Cannot delete course with existing course offerings");
+        }
+        if (enrollmentRepository.existsByCourseId(id)) {
+            throw new BusinessException(
+                    "Cannot delete course with existing enrollments");
+        }
+
         courseRepository.delete(course);
 
         activityLogService.log("COURSE_DELETED", "Course", id,

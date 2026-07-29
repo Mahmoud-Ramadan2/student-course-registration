@@ -1,6 +1,7 @@
 package com.mahmoudramadan.studentregistration.course.repo;
 
 import com.mahmoudramadan.studentregistration.course.entity.CourseOffering;
+import com.mahmoudramadan.studentregistration.course.enums.OfferingStatus;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;
@@ -8,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -26,5 +28,11 @@ public interface CourseOfferingRepository extends JpaRepository<CourseOffering, 
       AND o.instructor.id = :staffUserId
     """)
     boolean isInstructorOfOffering(@Param("offeringId") Long offeringId, @Param("staffUserId") Long staffUserId);
+
+    boolean existsByTermId(Long termId);
+
+    boolean existsByTermIdAndStatusIn(Long termId, List<OfferingStatus> statuses);
+
+    boolean existsByCourseId(Long courseId);
 
 }

@@ -1,6 +1,10 @@
 package com.mahmoudramadan.studentregistration.term.service;
 
 import com.mahmoudramadan.studentregistration.activity.service.ActivityLogService;
+import com.mahmoudramadan.studentregistration.course.enums.OfferingStatus;
+import com.mahmoudramadan.studentregistration.course.repo.CourseOfferingRepository;
+import com.mahmoudramadan.studentregistration.enrollment.repo.EnrollmentRepository;
+import com.mahmoudramadan.studentregistration.infra.security.CustomUserDetails;
 import com.mahmoudramadan.studentregistration.shared.exception.BusinessException;
 import com.mahmoudramadan.studentregistration.shared.exception.ResourceNotFoundException;
 import com.mahmoudramadan.studentregistration.term.dto.CreateTermRequest;
@@ -10,6 +14,7 @@ import com.mahmoudramadan.studentregistration.term.entity.Term;
 import com.mahmoudramadan.studentregistration.term.mapper.TermMapper;
 import com.mahmoudramadan.studentregistration.term.repo.TermRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +27,8 @@ public class TermService {
     private final TermRepository termRepository;
     private final TermMapper termMapper;
     private final ActivityLogService activityLogService;
+    private final CourseOfferingRepository courseOfferingRepository;
+    private final EnrollmentRepository enrollmentRepository;
 
     @Transactional
     public TermResponse create(CreateTermRequest request) {
@@ -64,6 +71,15 @@ public class TermService {
         Term term = termRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Term not found"));
 
+        if (request.active() != null && !request.active() && term.isActive()) {
+            boolean hasActiveOfferings = courseOfferingRepository.existsByTermIdAndStatusIn(
+                    id, List.of(OfferingStatus.SCHEDULED, OfferingStatus.OPEN));
+            if (hasActiveOfferings) {
+                throw new BusinessException(
+                        "Cannot deactivate term with active course offerings");
+            }
+        }
+
         if (request.name() != null && !request.name().equals(term.getName())) {
             if (termRepository.findByName(request.name()).isPresent()) {
                 throw new BusinessException("Term name " + request.name() + " already exists");
@@ -95,9 +111,25 @@ public class TermService {
     }
 
     @Transactional
-    public void delete(Long id) {
+    public void delete(Long id, CustomUserDetails currentUser) {
+        boolean isAdmin = currentUser.getAuthorities().stream()
+                .anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));
+        if (!isAdmin) {
+            throw new AccessDeniedException("Only admins can delete terms");
+        }
+
         Term term = termRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Term not found"));
+
+        if (courseOfferingRepository.existsByTermId(id)) {
+            throw new BusinessException(
+                    "Cannot delete term with existing course offerings");
+        }
+        if (enrollmentRepository.existsByTermId(id)) {
+            throw new BusinessException(
+                    "Cannot delete term with existing enrollments");
+        }
+
         termRepository.delete(term);
 
         activityLogService.log("TERM_DELETED", "Term", id,

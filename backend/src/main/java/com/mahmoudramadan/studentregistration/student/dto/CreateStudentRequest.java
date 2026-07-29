@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 public record CreateStudentRequest(
         @NotBlank String username,
-        @NotBlank @Size(min = 8) String password,
+        @NotBlank @Size(min = 8, max = 20) String password,
         @NotBlank @Email String email,
         @NotBlank String studentNumber,
         @NotBlank String firstName,

@@ -36,6 +36,12 @@ public interface EnrollmentRepository extends JpaRepository<Enrollment, Long> {
 
     boolean existsByStudentIdAndCourseIdAndStatus(Long studentId, Long courseId, EnrollmentStatus status);
 
+    boolean existsByTermId(Long termId);
+
+    boolean existsByCourseId(Long courseId);
+
+    boolean existsByOfferingId(Long offeringId);
+
     @Modifying
     @Query("UPDATE Enrollment e SET e.waitlistPosition = :position " +
             "WHERE e.id = :id")

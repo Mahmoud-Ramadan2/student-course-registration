@@ -1,4 +1,4 @@
-package com.mahmoudramadan.studentregistration.student.entity;
+    package com.mahmoudramadan.studentregistration.student.entity;
 
 import com.mahmoudramadan.studentregistration.student.enums.StudentStatus;
 import jakarta.persistence.*;

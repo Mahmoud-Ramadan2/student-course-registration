@@ -10,6 +10,7 @@ import com.mahmoudramadan.studentregistration.course.enums.OfferingStatus;
 import com.mahmoudramadan.studentregistration.course.mapper.CourseOfferingMapper;
 import com.mahmoudramadan.studentregistration.course.repo.CourseOfferingRepository;
 import com.mahmoudramadan.studentregistration.course.repo.CourseRepository;
+import com.mahmoudramadan.studentregistration.enrollment.repo.EnrollmentRepository;
 import com.mahmoudramadan.studentregistration.shared.exception.BusinessException;
 import com.mahmoudramadan.studentregistration.shared.exception.ResourceNotFoundException;
 import com.mahmoudramadan.studentregistration.staff.entity.Staff;
@@ -33,6 +34,7 @@ public class CourseOfferingService {
     private final StaffRepository staffRepository;
     private final CourseOfferingMapper courseOfferingMapper;
     private final ActivityLogService activityLogService;
+    private final EnrollmentRepository enrollmentRepository;
 
     @Transactional
     public CourseOfferingResponse create(CreateCourseOfferingRequest request) {
@@ -148,6 +150,10 @@ public class CourseOfferingService {
         CourseOffering offering = courseOfferingRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Course offering not found"));
 
+        if (enrollmentRepository.existsByOfferingId(id)) {
+            throw new BusinessException(
+                    "Cannot delete course offering with existing enrollments");
+        }
 
         courseOfferingRepository.delete(offering);
 

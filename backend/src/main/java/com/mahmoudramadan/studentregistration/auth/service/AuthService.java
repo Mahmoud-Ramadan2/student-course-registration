@@ -10,6 +10,7 @@ import com.mahmoudramadan.studentregistration.infra.security.JwtTokenService;
 import com.mahmoudramadan.studentregistration.user.entity.User;
 import com.mahmoudramadan.studentregistration.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -21,6 +22,7 @@ import java.time.Instant;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class AuthService {
 
     private final AuthenticationManager authenticationManager;
@@ -30,11 +32,12 @@ public class AuthService {
 
     @Transactional
     public AuthResponse login(LoginRequest request) {
+        log.debug("Login attempt username={}", request.username());
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.username(), request.password()));
 
-
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+        log.info("Login successful username={}", request.username());
 
         userRepository.findById(userDetails.getId()).ifPresent(user -> {
             user.setLastLoginAt(Instant.now());
@@ -49,6 +52,7 @@ public class AuthService {
 
     @Transactional
     public AuthResponse refresh(RefreshTokenRequest request) {
+        log.debug("Token refresh request");
         RefreshToken current = refreshTokenService.validateRefreshToken(request.refreshToken());
         String newRefreshToken = refreshTokenService.rotateRefreshToken(current);
         CustomUserDetails userDetails = new CustomUserDetails(current.getUser());
@@ -60,6 +64,7 @@ public class AuthService {
 
     @Transactional
     public void logout(RefreshTokenRequest request) {
+        log.debug("Logout request");
         refreshTokenService.revokeRefreshToken(request.refreshToken());
     }
 }

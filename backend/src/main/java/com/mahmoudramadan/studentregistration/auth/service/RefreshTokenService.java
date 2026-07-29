@@ -56,6 +56,7 @@ public class RefreshTokenService {
                 .build();
 
         refreshTokenRepository.save(token);
+        log.debug("Refresh token created for userId={} jti={}", userId, jti);
         return rawToken;
     }
 
@@ -80,6 +81,7 @@ public class RefreshTokenService {
                 .build();
 
         refreshTokenRepository.save(rotated);
+        log.debug("Refresh token rotated jti={} familyId={}", rotated.getJti(), rotated.getFamilyId());
         return newRawToken;
     }
 
@@ -89,6 +91,7 @@ public class RefreshTokenService {
                 .orElseThrow(() -> new BusinessException("Invalid refresh token"));
         token.setRevokedAt(Instant.now());
         refreshTokenRepository.save(token);
+        log.debug("Refresh token revoked jti={}", token.getJti());
     }
 
     @Transactional
@@ -104,6 +107,7 @@ public class RefreshTokenService {
             if (!token.isReuseDetected()) {
                 token.setReuseDetected(true);
                 refreshTokenRepository.save(token);
+                log.warn("Refresh token reuse detected jti={} familyId={}", token.getJti(), token.getFamilyId());
                 revokeFamily(token.getFamilyId());
             }
             throw new BusinessException("Refresh token revoked");
@@ -163,5 +167,6 @@ public class RefreshTokenService {
                     token.setReuseDetected(true);
                     refreshTokenRepository.save(token);
                 });
+        log.warn("Entire token family revoked familyId={}", familyId);
     }
 }

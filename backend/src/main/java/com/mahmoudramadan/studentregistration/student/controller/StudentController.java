@@ -13,6 +13,7 @@ import org.springframework.security.access.AccessDeniedException;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -23,6 +24,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/students")
 @RequiredArgsConstructor
+@Slf4j
 @Tag(name = "Students")
 public class StudentController {
 
@@ -32,6 +34,7 @@ public class StudentController {
     @PostMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'REGISTRAR')")
     public ResponseEntity<ApiResponse<StudentResponse>> create(@Valid @RequestBody CreateStudentRequest request) {
+        log.debug("Create student username={}", request.username());
         StudentResponse response = studentService.create(request);
         return ResponseEntity.ok(ApiResponse.created(response, "Student created successfully"));
     }
@@ -39,6 +42,7 @@ public class StudentController {
     @GetMapping("/{id}")
     public ResponseEntity<ApiResponse<StudentResponse>> findById(@PathVariable Long id,
     @AuthenticationPrincipal CustomUserDetails currentUser) {
+        log.debug("Find student by id={}", id);
         StudentResponse response = studentService.findById(id, currentUser);
         return ResponseEntity.ok(ApiResponse.ok(response));
     }
@@ -46,6 +50,7 @@ public class StudentController {
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'REGISTRAR', 'INSTRUCTOR')")
     public ResponseEntity<ApiResponse<List<StudentResponse>>> findAll() {
+        log.debug("Find all students");
         List<StudentResponse> response = studentService.findAll();
         return ResponseEntity.ok(ApiResponse.ok(response));
     }
@@ -54,6 +59,7 @@ public class StudentController {
     @PreAuthorize("hasAnyRole('ADMIN', 'REGISTRAR')")
     public ResponseEntity<ApiResponse<StudentResponse>> update(
             @PathVariable Long id, @Valid @RequestBody UpdateStudentRequest request) {
+        log.debug("Update student id={}", id);
         StudentResponse response = studentService.update(id, request);
         return ResponseEntity.ok(ApiResponse.ok(response));
     }
@@ -63,7 +69,7 @@ public class StudentController {
     public ResponseEntity<ApiResponse<StudentResponse>> updateMyProfile(
             @Valid @RequestBody UpdateMyProfileRequest request,
             @AuthenticationPrincipal CustomUserDetails currentUser) {
-
+        log.debug("Update my profile userId={}", currentUser.getId());
         StudentResponse response =
                 studentService.updateMyProfile(currentUser.getId(), request);
 
@@ -75,7 +81,7 @@ public class StudentController {
     public ResponseEntity<ApiResponse<List<EnrollmentResponse>>> getSchedule(
             @PathVariable Long studentId,
             @AuthenticationPrincipal CustomUserDetails currentUser) {
-
+        log.debug("Get schedule for studentId={}", studentId);
         return ResponseEntity.ok(ApiResponse.ok(
                 enrollmentService.findStudentSchedule(studentId, currentUser)
         ));

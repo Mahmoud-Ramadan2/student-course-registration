@@ -7,6 +7,12 @@ import com.mahmoudramadan.studentregistration.shared.entity.BaseAuditableEntity;
 import com.mahmoudramadan.studentregistration.student.entity.Student;
 import com.mahmoudramadan.studentregistration.term.entity.Term;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.time.Instant;
 import lombok.*;
 
 import java.time.Instant;

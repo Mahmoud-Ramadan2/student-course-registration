@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div th:fragment="button(url,text)">
+
+    <p style="text-align:center">
+
+        <a class="button"
+
+           th:href="${url}"
+
+           th:text="${text}">
+
+        </a>
+
+    </p>
+
+</div>
+
+<div th:fragment="divider">
+
+    <hr style="margin:35px 0">
+
+</div>
+
+<div th:fragment="warning(message)">
+
+    <div class="warning">
+
+        <strong>Security Notice</strong>
+
+        <p th:text="${message}"></p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

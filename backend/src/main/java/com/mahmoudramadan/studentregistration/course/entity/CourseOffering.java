@@ -5,9 +5,14 @@ import com.mahmoudramadan.studentregistration.shared.entity.BaseAuditableEntity;
 import com.mahmoudramadan.studentregistration.staff.entity.Staff;
 import com.mahmoudramadan.studentregistration.term.entity.Term;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import java.time.LocalTime;
+import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalTime;
 
 @Entity
 @Table(name = "course_offerings")
@@ -51,4 +56,7 @@ public class CourseOffering extends BaseAuditableEntity {
 
     @Enumerated(EnumType.STRING)
     private OfferingStatus status;
+
+    @Version
+    private Long version;
 }

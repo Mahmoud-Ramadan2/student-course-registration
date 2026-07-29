@@ -1,9 +1,15 @@
 package com.mahmoudramadan.studentregistration.shared.exception;
 
+import com.mahmoudramadan.studentregistration.notification.exception.NotificationException;
 import com.mahmoudramadan.studentregistration.shared.dto.ApiResponse;
 import io.jsonwebtoken.JwtException;
+import jakarta.persistence.LockTimeoutException;
+import jakarta.persistence.OptimisticLockException;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
+import org.springframework.dao.CannotAcquireLockException;
+import org.springframework.dao.DeadlockLoserDataAccessException;
+import org.springframework.dao.PessimisticLockingFailureException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -130,6 +136,21 @@ import java.util.stream.Collectors;
         }
 
         // =========================================================================
+        // Notification Exceptions
+        // =========================================================================
+
+        @ExceptionHandler(NotificationException.class)
+        public ResponseEntity<ApiResponse<Void>> handleNotificationException(
+                NotificationException ex) {
+
+            log.error("Notification error", ex);
+
+            return error(
+                    HttpStatus.INTERNAL_SERVER_ERROR,
+                    "An unexpected error occurred");
+        }
+
+        // =========================================================================
         // Security Exceptions
         // =========================================================================
 
@@ -151,14 +172,6 @@ import java.util.stream.Collectors;
                     "Invalid username or password");
         }
 
-        @ExceptionHandler(DisabledException.class)
-        public ResponseEntity<ApiResponse<Void>> handleDisabledAccount(
-                DisabledException ex) {
-
-            return error(
-                    HttpStatus.UNAUTHORIZED,
-                    "Please verify your email before logging in");
-        }
 
         @ExceptionHandler(LockedException.class)
         public ResponseEntity<ApiResponse<Void>> handleLockedAccount(
@@ -168,7 +181,6 @@ import java.util.stream.Collectors;
                     HttpStatus.UNAUTHORIZED,
                     "Account is locked. Contact support");
         }
-
         @ExceptionHandler(JwtException.class)
         public ResponseEntity<ApiResponse<Void>> handleJwtException(
                 JwtException ex) {
@@ -176,6 +188,44 @@ import java.util.stream.Collectors;
             return error(
                     HttpStatus.UNAUTHORIZED,
                     "Invalid or expired token");
+        }
+
+
+        // =========================================================================
+        // Database Locking Exceptions
+        // =========================================================================
+
+        @ExceptionHandler(OptimisticLockException.class)
+        public ResponseEntity<ApiResponse<Void>> handleOptimisticLock(
+                OptimisticLockException ex) {
+
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(ApiResponse.error(
+                            "The record was modified by another user."
+                    ));
+        }
+
+        @ExceptionHandler({
+                PessimisticLockingFailureException.class,
+                CannotAcquireLockException.class,
+                LockTimeoutException.class
+        })
+        public ResponseEntity<ApiResponse<Void>> handlePessimisticLock(Exception ex) {
+
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(ApiResponse.error(
+                            "The resource is currently being modified by another request. Please try again."
+                    ));
+        }
+
+        @ExceptionHandler(DeadlockLoserDataAccessException.class)
+        public ResponseEntity<ApiResponse<Void>> handleDeadlock(
+                DeadlockLoserDataAccessException ex) {
+
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(ApiResponse.error(
+                            "A database deadlock occurred. Please retry the operation."
+                    ));
         }
 
         // =========================================================================

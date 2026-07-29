@@ -1,0 +1,2823 @@
+{
+  "info": {
+    "_postman_id": "1dd206ab-c182-4238-9c38-06680168b358",
+    "name": "Student Course Registration API",
+    "description": "API for managing student course registrations",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "46252840"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "terms",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "find By Id",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/terms/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "terms",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "4139"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/terms/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "terms",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 3455,\n    \"name\": \"string\",\n    \"startDate\": \"2000-08-01\",\n    \"endDate\": \"2017-04-25\",\n    \"registrationStart\": \"2000-02-12T01:06:02.999Z\",\n    \"registrationEnd\": \"2005-01-24T15:33:29.685Z\",\n    \"active\": true,\n    \"createdAt\": \"2010-06-25T01:26:02.778Z\",\n    \"updatedAt\": \"1955-01-26T12:04:49.235Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"2015-04-19T06:21:14.194Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "update",
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"string\",\n  \"startDate\": \"1955-02-12\",\n  \"endDate\": \"2007-07-09\",\n  \"registrationStart\": \"1954-11-10T18:04:49.499Z\",\n  \"registrationEnd\": \"2019-12-24T20:38:31.297Z\",\n  \"active\": true\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/terms/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "terms",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "4139"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"string\",\n  \"startDate\": \"1955-02-12\",\n  \"endDate\": \"2007-07-09\",\n  \"registrationStart\": \"1954-11-10T18:04:49.499Z\",\n  \"registrationEnd\": \"2019-12-24T20:38:31.297Z\",\n  \"active\": true\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/terms/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "terms",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 3455,\n    \"name\": \"string\",\n    \"startDate\": \"2000-08-01\",\n    \"endDate\": \"2017-04-25\",\n    \"registrationStart\": \"2000-02-12T01:06:02.999Z\",\n    \"registrationEnd\": \"2005-01-24T15:33:29.685Z\",\n    \"active\": true,\n    \"createdAt\": \"2010-06-25T01:26:02.778Z\",\n    \"updatedAt\": \"1955-01-26T12:04:49.235Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"2015-04-19T06:21:14.194Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "delete",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/terms/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "terms",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "4139"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/terms/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "terms",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "find All",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/terms",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "terms"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/terms",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "terms"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": true,\n  \"data\": [\n    {\n      \"id\": 6538,\n      \"name\": \"string\",\n      \"startDate\": \"1964-01-23\",\n      \"endDate\": \"2014-04-29\",\n      \"registrationStart\": \"2001-10-23T13:05:43.258Z\",\n      \"registrationEnd\": \"1963-02-12T01:40:09.156Z\",\n      \"active\": false,\n      \"createdAt\": \"2013-04-30T18:56:20.939Z\",\n      \"updatedAt\": \"1995-05-15T13:09:04.686Z\"\n    },\n    {\n      \"id\": 8097,\n      \"name\": \"string\",\n      \"startDate\": \"1978-04-07\",\n      \"endDate\": \"1962-04-22\",\n      \"registrationStart\": \"2010-01-14T21:37:44.789Z\",\n      \"registrationEnd\": \"1979-08-30T01:07:45.685Z\",\n      \"active\": false,\n      \"createdAt\": \"1971-12-07T13:45:43.059Z\",\n      \"updatedAt\": \"1989-09-13T18:54:07.544Z\"\n    }\n  ],\n  \"message\": \"string\",\n  \"timestamp\": \"1961-04-12T19:16:03.228Z\",\n  \"requestId\": \"string\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "create",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n            \"name\": \"Spring 2028\",\n            \"startDate\": \"2028-01-12\",\n            \"endDate\": \"2028-05-01\",\n            \"registrationStart\": \"2027-11-01T00:00:00Z\",\n            \"registrationEnd\": \"2028-01-23T23:59:59Z\",\n            \"active\": false\n        }",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/terms",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "terms"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"endDate\": \"1975-07-04\",\n  \"name\": \"string\",\n  \"startDate\": \"2001-09-10\",\n  \"registrationStart\": \"2019-11-24T07:22:48.554Z\",\n  \"registrationEnd\": \"1950-08-01T14:05:00.695Z\",\n  \"active\": true\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/terms",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "terms"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 3455,\n    \"name\": \"string\",\n    \"startDate\": \"2000-08-01\",\n    \"endDate\": \"2017-04-25\",\n    \"registrationStart\": \"2000-02-12T01:06:02.999Z\",\n    \"registrationEnd\": \"2005-01-24T15:33:29.685Z\",\n    \"active\": true,\n    \"createdAt\": \"2010-06-25T01:26:02.778Z\",\n    \"updatedAt\": \"1955-01-26T12:04:49.235Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"2015-04-19T06:21:14.194Z\",\n  \"requestId\": \"string\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "students",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "find By Id 1",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/students/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "students",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "7"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/students/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "students",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": false,\n  \"data\": {\n    \"id\": 7931,\n    \"username\": \"string\",\n    \"email\": \"string\",\n    \"studentNumber\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"dateOfBirth\": \"1976-01-13\",\n    \"phone\": \"string\",\n    \"address\": \"string\",\n    \"status\": \"SUSPENDED\",\n    \"createdAt\": \"1997-07-14T04:35:12.245Z\",\n    \"updatedAt\": \"1973-12-05T00:34:08.244Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1981-08-25T15:02:04.499Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "update 1",
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"phone\": \"01145675347\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/students/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "students",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "8"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n \n  \"status\": \"GRADUATED\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/students/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "students",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "8"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": false,\n  \"data\": {\n    \"id\": 7931,\n    \"username\": \"string\",\n    \"email\": \"string\",\n    \"studentNumber\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"dateOfBirth\": \"1976-01-13\",\n    \"phone\": \"string\",\n    \"address\": \"string\",\n    \"status\": \"SUSPENDED\",\n    \"createdAt\": \"1997-07-14T04:35:12.245Z\",\n    \"updatedAt\": \"1973-12-05T00:34:08.244Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1981-08-25T15:02:04.499Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "{studentId}",
+                  "item": [
+                    {
+                      "name": "schedule",
+                      "item": [
+                        {
+                          "name": "get Schedule",
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/students/:studentId/schedule",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "students",
+                                ":studentId",
+                                "schedule"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "studentId",
+                                  "value": "9"
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "name": "OK",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "*/*"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v1/students/:studentId/schedule",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v1",
+                                    "students",
+                                    ":studentId",
+                                    "schedule"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "studentId",
+                                      "value": "4139"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "*/*"
+                                }
+                              ],
+                              "cookie": [],
+                              "body": "{\n  \"success\": false,\n  \"data\": [\n    {\n      \"id\": 4572,\n      \"studentId\": 9120,\n      \"studentName\": \"string\",\n      \"courseId\": 5800,\n      \"courseCode\": \"string\",\n      \"courseTitle\": \"string\",\n      \"offeringId\": 2474,\n      \"sectionNumber\": \"string\",\n      \"termId\": 3461,\n      \"termName\": \"string\",\n      \"status\": \"WAITLISTED\",\n      \"waitlistPosition\": 8932,\n      \"enrolledAt\": \"2014-02-04T21:26:22.446Z\",\n      \"droppedAt\": \"1971-06-11T18:53:55.071Z\"\n    },\n    {\n      \"id\": 2266,\n      \"studentId\": 9407,\n      \"studentName\": \"string\",\n      \"courseId\": 5289,\n      \"courseCode\": \"string\",\n      \"courseTitle\": \"string\",\n      \"offeringId\": 2748,\n      \"sectionNumber\": \"string\",\n      \"termId\": 9791,\n      \"termName\": \"string\",\n      \"status\": \"ENROLLED\",\n      \"waitlistPosition\": 1305,\n      \"enrolledAt\": \"2018-12-18T21:26:53.514Z\",\n      \"droppedAt\": \"1981-04-17T23:09:37.184Z\"\n    }\n  ],\n  \"message\": \"string\",\n  \"timestamp\": \"1975-08-14T16:32:58.283Z\",\n  \"requestId\": \"string\"\n}"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "find All 1",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/students",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "students"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/students",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "students"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": true,\n  \"data\": [\n    {\n      \"id\": 7151,\n      \"username\": \"string\",\n      \"email\": \"string\",\n      \"studentNumber\": \"string\",\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"dateOfBirth\": \"2014-02-27\",\n      \"phone\": \"string\",\n      \"address\": \"string\",\n      \"status\": \"SUSPENDED\",\n      \"createdAt\": \"2012-03-19T13:23:03.594Z\",\n      \"updatedAt\": \"1955-11-06T20:26:41.049Z\"\n    },\n    {\n      \"id\": 1588,\n      \"username\": \"string\",\n      \"email\": \"string\",\n      \"studentNumber\": \"string\",\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"dateOfBirth\": \"2019-10-24\",\n      \"phone\": \"string\",\n      \"address\": \"string\",\n      \"status\": \"INACTIVE\",\n      \"createdAt\": \"2013-05-08T08:51:17.638Z\",\n      \"updatedAt\": \"1993-06-21T01:26:00.457Z\"\n    }\n  ],\n  \"message\": \"string\",\n  \"timestamp\": \"2013-11-28T07:38:27.226Z\",\n  \"requestId\": \"string\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "create 1",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"new1@edd.dd\",\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"password\": \"stri\",\n  \"studentNumber\": \"string\",\n  \"username\": \"string\",\n  \"dateOfBirth\": \"2006-11-25\",\n  \"phone\": \"string\",\n  \"address\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/students",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "students"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"email\": \"CqzJX7HBPM-V@WiQZ.ea\",\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"password\": \"stringstring\",\n  \"studentNumber\": \"string\",\n  \"username\": \"string\",\n  \"dateOfBirth\": \"2006-11-25\",\n  \"phone\": \"string\",\n  \"address\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/students",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "students"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"data\": {\n    \"id\": 7931,\n    \"username\": \"string\",\n    \"email\": \"string\",\n    \"studentNumber\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"dateOfBirth\": \"1976-01-13\",\n    \"phone\": \"string\",\n    \"address\": \"string\",\n    \"status\": \"SUSPENDED\",\n    \"createdAt\": \"1997-07-14T04:35:12.245Z\",\n    \"updatedAt\": \"1973-12-05T00:34:08.244Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1981-08-25T15:02:04.499Z\",\n  \"requestId\": \"string\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "staff",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "find By Id 2",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/staff/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "staff",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "4"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/staff/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "staff",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": false,\n  \"data\": {\n    \"id\": 5714,\n    \"username\": \"string\",\n    \"email\": \"string\",\n    \"employeeNumber\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"title\": \"string\",\n    \"department\": \"string\",\n    \"hireDate\": \"2010-08-16\",\n    \"createdAt\": \"2000-03-24T03:57:19.453Z\",\n    \"updatedAt\": \"1994-01-04T13:10:44.940Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1971-12-13T21:05:44.834Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "update 2",
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"email\": \"string\",\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"title\": \"string\",\n  \"department\": \"string\",\n  \"hireDate\": \"2016-03-06\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/staff/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "staff",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "4139"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"email\": \"string\",\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"title\": \"string\",\n  \"department\": \"string\",\n  \"hireDate\": \"2016-03-06\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/staff/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "staff",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": false,\n  \"data\": {\n    \"id\": 5714,\n    \"username\": \"string\",\n    \"email\": \"string\",\n    \"employeeNumber\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"title\": \"string\",\n    \"department\": \"string\",\n    \"hireDate\": \"2010-08-16\",\n    \"createdAt\": \"2000-03-24T03:57:19.453Z\",\n    \"updatedAt\": \"1994-01-04T13:10:44.940Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1971-12-13T21:05:44.834Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "find All 2",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/staff",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "staff"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/staff",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "staff"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": true,\n  \"data\": [\n    {\n      \"id\": 7108,\n      \"username\": \"string\",\n      \"email\": \"string\",\n      \"employeeNumber\": \"string\",\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"title\": \"string\",\n      \"department\": \"string\",\n      \"hireDate\": \"1957-10-07\",\n      \"createdAt\": \"1972-10-12T18:22:20.896Z\",\n      \"updatedAt\": \"1980-03-25T13:32:33.218Z\"\n    },\n    {\n      \"id\": 9010,\n      \"username\": \"string\",\n      \"email\": \"string\",\n      \"employeeNumber\": \"string\",\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"title\": \"string\",\n      \"department\": \"string\",\n      \"hireDate\": \"1952-12-29\",\n      \"createdAt\": \"1998-02-06T00:05:04.615Z\",\n      \"updatedAt\": \"1983-09-23T20:42:32.050Z\"\n    }\n  ],\n  \"message\": \"string\",\n  \"timestamp\": \"1946-09-30T19:00:19.134Z\",\n  \"requestId\": \"string\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "create 2",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"zypUxV3P@PcSUBVpxCMkkVAmBSXgZEFrkbWviQTgnQ.txv\",\n  \"employeeNumber\": \"string\",\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"password\": \"stringstring\",\n  \"role\": \"ADMIN\",\n  \"username\": \"string\",\n  \"title\": \"string\",\n  \"department\": \"string\",\n  \"hireDate\": \"1948-05-03\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/staff",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "staff"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"email\": \"zypUxV3P@PcSUBVpxCMkkVAmBSXgZEFrkbWviQTgnQ.txv\",\n  \"employeeNumber\": \"string\",\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"password\": \"stringstring\",\n  \"role\": \"ADMIN\",\n  \"username\": \"string\",\n  \"title\": \"string\",\n  \"department\": \"string\",\n  \"hireDate\": \"1948-05-03\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/staff",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "staff"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"data\": {\n    \"id\": 5714,\n    \"username\": \"string\",\n    \"email\": \"string\",\n    \"employeeNumber\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"title\": \"string\",\n    \"department\": \"string\",\n    \"hireDate\": \"2010-08-16\",\n    \"createdAt\": \"2000-03-24T03:57:19.453Z\",\n    \"updatedAt\": \"1994-01-04T13:10:44.940Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1971-12-13T21:05:44.834Z\",\n  \"requestId\": \"string\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "courses",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "find By Id 3",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/courses/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "courses",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "4139"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/courses/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "courses",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": false,\n  \"data\": {\n    \"id\": 4703,\n    \"code\": \"string\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"creditHours\": 6253,\n    \"department\": \"string\",\n    \"active\": true,\n    \"createdAt\": \"1995-12-09T03:30:10.901Z\",\n    \"updatedAt\": \"1986-10-18T14:32:05.907Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1955-10-25T06:02:36.807Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "update 3",
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"creditHours\": 1653,\n  \"department\": \"string\",\n  \"active\": false\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/courses/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "courses",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "4139"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"creditHours\": 1653,\n  \"department\": \"string\",\n  \"active\": false\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/courses/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "courses",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": false,\n  \"data\": {\n    \"id\": 4703,\n    \"code\": \"string\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"creditHours\": 6253,\n    \"department\": \"string\",\n    \"active\": true,\n    \"createdAt\": \"1995-12-09T03:30:10.901Z\",\n    \"updatedAt\": \"1986-10-18T14:32:05.907Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1955-10-25T06:02:36.807Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "delete 1",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/courses/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "courses",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "4139"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/courses/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "courses",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "find All 3",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/courses",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "courses"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/courses",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "courses"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": true,\n  \"data\": [\n    {\n      \"id\": 8321,\n      \"code\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"creditHours\": 5279,\n      \"department\": \"string\",\n      \"active\": false,\n      \"createdAt\": \"1985-11-02T01:24:15.532Z\",\n      \"updatedAt\": \"2022-11-07T14:24:38.172Z\"\n    },\n    {\n      \"id\": 4966,\n      \"code\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"creditHours\": 1557,\n      \"department\": \"string\",\n      \"active\": false,\n      \"createdAt\": \"1986-06-19T23:13:43.435Z\",\n      \"updatedAt\": \"1988-12-12T17:00:08.644Z\"\n    }\n  ],\n  \"message\": \"string\",\n  \"timestamp\": \"2012-08-03T04:38:06.352Z\",\n  \"requestId\": \"string\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "create 3",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"code\": \"string\",\n  \"creditHours\": 5956,\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"department\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/courses",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "courses"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"code\": \"string\",\n  \"creditHours\": 5956,\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"department\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/courses",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "courses"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"data\": {\n    \"id\": 4703,\n    \"code\": \"string\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"creditHours\": 6253,\n    \"department\": \"string\",\n    \"active\": true,\n    \"createdAt\": \"1995-12-09T03:30:10.901Z\",\n    \"updatedAt\": \"1986-10-18T14:32:05.907Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1955-10-25T06:02:36.807Z\",\n  \"requestId\": \"string\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "course-offerings",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "find By Id 4",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/course-offerings/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "course-offerings",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "4139"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/course-offerings/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "course-offerings",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": false,\n  \"data\": {\n    \"id\": 7331,\n    \"courseId\": 1626,\n    \"courseCode\": \"string\",\n    \"courseTitle\": \"string\",\n    \"termId\": 857,\n    \"termName\": \"string\",\n    \"sectionNumber\": \"string\",\n    \"instructorId\": 8116,\n    \"instructorName\": \"string\",\n    \"capacity\": 6017,\n    \"waitlistCapacity\": 56,\n    \"room\": \"string\",\n    \"daysOfWeek\": \"string\",\n    \"startTime\": \"string\",\n    \"endTime\": \"string\",\n    \"status\": \"CANCELLED\",\n    \"createdAt\": \"1966-01-15T11:12:13.298Z\",\n    \"updatedAt\": \"2017-08-22T11:28:48.976Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"2004-07-23T12:21:07.104Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "update 4",
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"sectionNumber\": \"string\",\n  \"instructorId\": 1358,\n  \"capacity\": 168,\n  \"waitlistCapacity\": 3796,\n  \"room\": \"string\",\n  \"daysOfWeek\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"status\": \"CANCELLED\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/course-offerings/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "course-offerings",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "4139"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"sectionNumber\": \"string\",\n  \"instructorId\": 1358,\n  \"capacity\": 168,\n  \"waitlistCapacity\": 3796,\n  \"room\": \"string\",\n  \"daysOfWeek\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"status\": \"CANCELLED\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/course-offerings/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "course-offerings",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": false,\n  \"data\": {\n    \"id\": 7331,\n    \"courseId\": 1626,\n    \"courseCode\": \"string\",\n    \"courseTitle\": \"string\",\n    \"termId\": 857,\n    \"termName\": \"string\",\n    \"sectionNumber\": \"string\",\n    \"instructorId\": 8116,\n    \"instructorName\": \"string\",\n    \"capacity\": 6017,\n    \"waitlistCapacity\": 56,\n    \"room\": \"string\",\n    \"daysOfWeek\": \"string\",\n    \"startTime\": \"string\",\n    \"endTime\": \"string\",\n    \"status\": \"CANCELLED\",\n    \"createdAt\": \"1966-01-15T11:12:13.298Z\",\n    \"updatedAt\": \"2017-08-22T11:28:48.976Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"2004-07-23T12:21:07.104Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "delete 2",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/course-offerings/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "course-offerings",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "4139"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/course-offerings/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "course-offerings",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "{offeringId}",
+                  "item": [
+                    {
+                      "name": "enrollments",
+                      "item": [
+                        {
+                          "name": "get Enrollments",
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/course-offerings/:offeringId/enrollments",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "course-offerings",
+                                ":offeringId",
+                                "enrollments"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "offeringId",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "name": "OK",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "*/*"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v1/course-offerings/:offeringId/enrollments",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v1",
+                                    "course-offerings",
+                                    ":offeringId",
+                                    "enrollments"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "offeringId",
+                                      "value": "4139"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "*/*"
+                                }
+                              ],
+                              "cookie": [],
+                              "body": "{\n  \"success\": false,\n  \"data\": [\n    {\n      \"id\": 4572,\n      \"studentId\": 9120,\n      \"studentName\": \"string\",\n      \"courseId\": 5800,\n      \"courseCode\": \"string\",\n      \"courseTitle\": \"string\",\n      \"offeringId\": 2474,\n      \"sectionNumber\": \"string\",\n      \"termId\": 3461,\n      \"termName\": \"string\",\n      \"status\": \"WAITLISTED\",\n      \"waitlistPosition\": 8932,\n      \"enrolledAt\": \"2014-02-04T21:26:22.446Z\",\n      \"droppedAt\": \"1971-06-11T18:53:55.071Z\"\n    },\n    {\n      \"id\": 2266,\n      \"studentId\": 9407,\n      \"studentName\": \"string\",\n      \"courseId\": 5289,\n      \"courseCode\": \"string\",\n      \"courseTitle\": \"string\",\n      \"offeringId\": 2748,\n      \"sectionNumber\": \"string\",\n      \"termId\": 9791,\n      \"termName\": \"string\",\n      \"status\": \"ENROLLED\",\n      \"waitlistPosition\": 1305,\n      \"enrolledAt\": \"2018-12-18T21:26:53.514Z\",\n      \"droppedAt\": \"1981-04-17T23:09:37.184Z\"\n    }\n  ],\n  \"message\": \"string\",\n  \"timestamp\": \"1975-08-14T16:32:58.283Z\",\n  \"requestId\": \"string\"\n}"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "find All 4",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/course-offerings",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "course-offerings"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/course-offerings",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "course-offerings"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"data\": [\n    {\n      \"id\": 6652,\n      \"courseId\": 3782,\n      \"courseCode\": \"string\",\n      \"courseTitle\": \"string\",\n      \"termId\": 4031,\n      \"termName\": \"string\",\n      \"sectionNumber\": \"string\",\n      \"instructorId\": 2380,\n      \"instructorName\": \"string\",\n      \"capacity\": 3374,\n      \"waitlistCapacity\": 7738,\n      \"room\": \"string\",\n      \"daysOfWeek\": \"string\",\n      \"startTime\": \"string\",\n      \"endTime\": \"string\",\n      \"status\": \"CANCELLED\",\n      \"createdAt\": \"2001-07-18T21:14:58.686Z\",\n      \"updatedAt\": \"2023-05-11T20:37:08.577Z\"\n    },\n    {\n      \"id\": 6995,\n      \"courseId\": 8624,\n      \"courseCode\": \"string\",\n      \"courseTitle\": \"string\",\n      \"termId\": 4411,\n      \"termName\": \"string\",\n      \"sectionNumber\": \"string\",\n      \"instructorId\": 538,\n      \"instructorName\": \"string\",\n      \"capacity\": 3283,\n      \"waitlistCapacity\": 8410,\n      \"room\": \"string\",\n      \"daysOfWeek\": \"string\",\n      \"startTime\": \"string\",\n      \"endTime\": \"string\",\n      \"status\": \"SCHEDULED\",\n      \"createdAt\": \"2004-08-15T13:40:40.965Z\",\n      \"updatedAt\": \"1988-06-13T12:06:01.754Z\"\n    }\n  ],\n  \"message\": \"string\",\n  \"timestamp\": \"1987-06-13T08:52:00.289Z\",\n  \"requestId\": \"string\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "create 4",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"capacity\": 6398,\n  \"courseId\": 91,\n  \"termId\": 9532,\n  \"sectionNumber\": \"string\",\n  \"instructorId\": 6763,\n  \"waitlistCapacity\": 2176,\n  \"room\": \"string\",\n  \"daysOfWeek\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/course-offerings",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "course-offerings"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"capacity\": 6398,\n  \"courseId\": 91,\n  \"termId\": 9532,\n  \"sectionNumber\": \"string\",\n  \"instructorId\": 6763,\n  \"waitlistCapacity\": 2176,\n  \"room\": \"string\",\n  \"daysOfWeek\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/course-offerings",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "course-offerings"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"data\": {\n    \"id\": 7331,\n    \"courseId\": 1626,\n    \"courseCode\": \"string\",\n    \"courseTitle\": \"string\",\n    \"termId\": 857,\n    \"termName\": \"string\",\n    \"sectionNumber\": \"string\",\n    \"instructorId\": 8116,\n    \"instructorName\": \"string\",\n    \"capacity\": 6017,\n    \"waitlistCapacity\": 56,\n    \"room\": \"string\",\n    \"daysOfWeek\": \"string\",\n    \"startTime\": \"string\",\n    \"endTime\": \"string\",\n    \"status\": \"CANCELLED\",\n    \"createdAt\": \"1966-01-15T11:12:13.298Z\",\n    \"updatedAt\": \"2017-08-22T11:28:48.976Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"2004-07-23T12:21:07.104Z\",\n  \"requestId\": \"string\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "enrollments",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "drop",
+                      "item": [
+                        {
+                          "name": "drop",
+                          "request": {
+                            "method": "PATCH",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/enrollments/:id/drop",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "enrollments",
+                                ":id",
+                                "drop"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "1"
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "name": "OK",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v1/enrollments/:id/drop",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v1",
+                                    "enrollments",
+                                    ":id",
+                                    "drop"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id",
+                                      "value": "4139"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "body": ""
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "find By Id 5",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/enrollments/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "enrollments",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "4"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/enrollments/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "enrollments",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "4139"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 8610,\n    \"studentId\": 9019,\n    \"studentName\": \"string\",\n    \"courseId\": 14,\n    \"courseCode\": \"string\",\n    \"courseTitle\": \"string\",\n    \"offeringId\": 2962,\n    \"sectionNumber\": \"string\",\n    \"termId\": 3405,\n    \"termName\": \"string\",\n    \"status\": \"ENROLLED\",\n    \"waitlistPosition\": 3476,\n    \"enrolledAt\": \"1989-06-06T12:29:58.858Z\",\n    \"droppedAt\": \"2020-08-28T03:48:16.103Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1982-09-07T10:29:43.649Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "enroll",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"offeringId\": 3,\n  \"studentId\": 5\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/enrollments",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "enrollments"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"offeringId\": 3306,\n  \"studentId\": 3659\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/enrollments",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "enrollments"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 8610,\n    \"studentId\": 9019,\n    \"studentName\": \"string\",\n    \"courseId\": 14,\n    \"courseCode\": \"string\",\n    \"courseTitle\": \"string\",\n    \"offeringId\": 2962,\n    \"sectionNumber\": \"string\",\n    \"termId\": 3405,\n    \"termName\": \"string\",\n    \"status\": \"ENROLLED\",\n    \"waitlistPosition\": 3476,\n    \"enrolledAt\": \"1989-06-06T12:29:58.858Z\",\n    \"droppedAt\": \"2020-08-28T03:48:16.103Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1982-09-07T10:29:43.649Z\",\n  \"requestId\": \"string\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "auth",
+              "item": [
+                {
+                  "name": "refresh",
+                  "item": [
+                    {
+                      "name": "refresh",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"refreshToken\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/auth/refresh",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "auth",
+                            "refresh"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"refreshToken\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/auth/refresh",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "auth",
+                                "refresh"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": false,\n  \"data\": {\n    \"accessToken\": \"string\",\n    \"expiresInSeconds\": 6282,\n    \"refreshToken\": \"string\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1992-11-21T22:54:06.780Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "logout",
+                  "item": [
+                    {
+                      "name": "logout",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"refreshToken\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/auth/logout",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "auth",
+                            "logout"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"refreshToken\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/auth/logout",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "auth",
+                                "logout"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "login",
+                  "item": [
+                    {
+                      "name": "login",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "exec": [
+                              "// Parse the response\r",
+                              "const response = pm.response.json();\r",
+                              "\r",
+                              "// Access the token inside the 'data' object\r",
+                              "const token = response.data.accessToken; \r",
+                              "\r",
+                              "// Save it to your environment variable\r",
+                              "pm.environment.set(\"accessToken\", token);\r",
+                              ""
+                            ],
+                            "type": "text/javascript",
+                            "packages": {},
+                            "requests": {}
+                          }
+                        }
+                      ],
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"username\": \"admin1\",\n  \"password\": \"A.a123456\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/auth/login",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "auth",
+                            "login"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"password\": \"string\",\n  \"username\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/auth/login",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "auth",
+                                "login"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": false,\n  \"data\": {\n    \"accessToken\": \"string\",\n    \"expiresInSeconds\": 6282,\n    \"refreshToken\": \"string\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1992-11-21T22:54:06.780Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "auth": {
+                "type": "noauth"
+              },
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {},
+                    "exec": [
+                      ""
+                    ]
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {},
+                    "exec": [
+                      ""
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "users",
+              "item": [
+                {
+                  "name": "me",
+                  "item": [
+                    {
+                      "name": "me",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/users/me",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "users",
+                            "me"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/users/me",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "users",
+                                "me"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"success\": false,\n  \"data\": {\n    \"id\": 4044,\n    \"username\": \"string\",\n    \"email\": \"string\",\n    \"roles\": [\n      {\n        \"id\": 7080,\n        \"createdAt\": \"1993-03-09T04:52:28.964Z\",\n        \"updatedAt\": \"2021-01-30T07:15:09.765Z\",\n        \"createdBy\": 9896,\n        \"updatedBy\": 3452,\n        \"roleName\": \"STUDENT\",\n        \"description\": \"string\",\n        \"users\": [\n          {\n            \"id\": 4801,\n            \"createdAt\": \"2023-06-04T04:57:36.527Z\",\n            \"updatedAt\": \"1984-01-21T14:13:29.629Z\",\n            \"createdBy\": 4950,\n            \"updatedBy\": 8374,\n            \"username\": \"string\",\n            \"email\": \"string\",\n            \"passwordHash\": \"string\",\n            \"active\": true,\n            \"lastLoginAt\": \"1979-06-08T07:08:30.618Z\",\n            \"roles\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Role detected>\"\n              }\n            ]\n          },\n          {\n            \"id\": 9035,\n            \"createdAt\": \"1982-11-07T21:35:22.262Z\",\n            \"updatedAt\": \"2008-03-21T12:48:43.577Z\",\n            \"createdBy\": 9170,\n            \"updatedBy\": 4779,\n            \"username\": \"string\",\n            \"email\": \"string\",\n            \"passwordHash\": \"string\",\n            \"active\": true,\n            \"lastLoginAt\": \"1992-02-28T18:08:06.909Z\",\n            \"roles\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Role detected>\"\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"id\": 2064,\n        \"createdAt\": \"1988-02-27T16:04:23.315Z\",\n        \"updatedAt\": \"1993-04-13T10:34:22.554Z\",\n        \"createdBy\": 6994,\n        \"updatedBy\": 2071,\n        \"roleName\": \"STUDENT\",\n        \"description\": \"string\",\n        \"users\": [\n          {\n            \"id\": 593,\n            \"createdAt\": \"1974-09-17T00:00:21.557Z\",\n            \"updatedAt\": \"2012-03-21T10:41:44.967Z\",\n            \"createdBy\": 2591,\n            \"updatedBy\": 4367,\n            \"username\": \"string\",\n            \"email\": \"string\",\n            \"passwordHash\": \"string\",\n            \"active\": false,\n            \"lastLoginAt\": \"2024-04-27T10:42:10.177Z\",\n            \"roles\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Role detected>\"\n              }\n            ]\n          },\n          {\n            \"id\": 1108,\n            \"createdAt\": \"2015-05-13T11:49:05.337Z\",\n            \"updatedAt\": \"1978-01-10T15:58:09.276Z\",\n            \"createdBy\": 4965,\n            \"updatedBy\": 8335,\n            \"username\": \"string\",\n            \"email\": \"string\",\n            \"passwordHash\": \"string\",\n            \"active\": false,\n            \"lastLoginAt\": \"2023-02-14T02:48:14.456Z\",\n            \"roles\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Role detected>\"\n              }\n            ]\n          }\n        ]\n      }\n    ],\n    \"active\": false,\n    \"lastLoginAt\": \"2008-07-08T01:31:29.924Z\",\n    \"createdAt\": \"1987-03-03T23:41:24.657Z\",\n    \"updatedAt\": \"2006-03-29T22:28:04.264Z\"\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"1976-07-06T23:11:39.727Z\",\n  \"requestId\": \"string\"\n}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "activity-logs",
+              "item": [
+                {
+                  "name": "find All 5",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/activity-logs?entityType=string&action=string&actorId=4139&page=9945&size=9047&sort=string,string",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "activity-logs"
+                      ],
+                      "query": [
+                        {
+                          "key": "entityType",
+                          "value": "string"
+                        },
+                        {
+                          "key": "action",
+                          "value": "string"
+                        },
+                        {
+                          "key": "actorId",
+                          "value": "4139"
+                        },
+                        {
+                          "key": "page",
+                          "value": "9945"
+                        },
+                        {
+                          "key": "size",
+                          "value": "9047"
+                        },
+                        {
+                          "key": "sort",
+                          "value": "string,string"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/activity-logs?entityType=string&action=string&actorId=4139&page=9945&size=9047&sort=string,string",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "activity-logs"
+                          ],
+                          "query": [
+                            {
+                              "key": "entityType",
+                              "value": "string"
+                            },
+                            {
+                              "key": "action",
+                              "value": "string"
+                            },
+                            {
+                              "key": "actorId",
+                              "value": "4139"
+                            },
+                            {
+                              "key": "page",
+                              "value": "9945"
+                            },
+                            {
+                              "key": "size",
+                              "value": "9047"
+                            },
+                            {
+                              "key": "sort",
+                              "value": "string,string"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"success\": false,\n  \"data\": {\n    \"content\": [\n      {\n        \"id\": 8031,\n        \"actorId\": 9163,\n        \"actorUsername\": \"string\",\n        \"action\": \"string\",\n        \"entityType\": \"string\",\n        \"entityId\": 4361,\n        \"details\": {\n          \"key_0\": true\n        },\n        \"createdAt\": \"1972-08-12T19:07:59.197Z\"\n      },\n      {\n        \"id\": 387,\n        \"actorId\": 95,\n        \"actorUsername\": \"string\",\n        \"action\": \"string\",\n        \"entityType\": \"string\",\n        \"entityId\": 6636,\n        \"details\": {\n          \"key_0\": 9360\n        },\n        \"createdAt\": \"1988-04-30T18:41:06.717Z\"\n      }\n    ],\n    \"totalElements\": 8320,\n    \"totalPages\": 3591,\n    \"currentPage\": 2165,\n    \"pageSize\": 5635,\n    \"hasNext\": true,\n    \"hasPrevious\": true\n  },\n  \"message\": \"string\",\n  \"timestamp\": \"2009-08-27T18:16:54.269Z\",\n  \"requestId\": \"string\"\n}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{accessToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
